@@ -35,7 +35,7 @@ export function QuestionsPage() {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Bank Soal</h1>
-        <p className="text-sm text-slate-500">Cari, review, validasi, dan kelola seluruh soal.</p>
+        <p className="text-sm text-muted-foreground">Cari, review, validasi, dan kelola seluruh soal.</p>
       </div>
       <Card>
         <CardHeader>
@@ -66,7 +66,7 @@ export function QuestionsPage() {
                   <TD>{question.subject}</TD>
                   <TD>{question.questionType}</TD>
                   <TD>
-                    <Badge className={question.status === "valid" ? "bg-emerald-100 text-emerald-700" : ""}>{question.status}</Badge>
+                    <Badge className={question.status === "valid" ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" : ""}>{question.status}</Badge>
                   </TD>
                   <TD className="space-x-2">
                     <Button variant="outline" onClick={() => validateMutation.mutate(question)}>

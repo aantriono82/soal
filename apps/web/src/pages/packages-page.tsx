@@ -30,7 +30,7 @@ export function PackagesPage() {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Paket Soal</h1>
-        <p className="text-sm text-slate-500">Rakit paket soal dari bank soal lalu export PDF atau DOCX.</p>
+        <p className="text-sm text-muted-foreground">Rakit paket soal dari bank soal lalu export PDF atau DOCX.</p>
       </div>
       <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
         <Card>
@@ -83,13 +83,13 @@ export function PackagesPage() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <div className="font-medium">{pack.title}</div>
-                    <div className="text-sm text-slate-500">{pack.description}</div>
+                    <div className="text-sm text-muted-foreground">{pack.description}</div>
                   </div>
                   <div className="flex gap-2">
-                    <a className="inline-flex h-10 items-center rounded-md border border-border px-4 text-sm" href={`/api/export/package/${pack.id}/pdf`}>
+                    <a className="inline-flex h-10 items-center rounded-md border border-border bg-card px-4 text-sm hover:bg-secondary" href={`/api/export/package/${pack.id}/pdf`}>
                       PDF
                     </a>
-                    <a className="inline-flex h-10 items-center rounded-md border border-border px-4 text-sm" href={`/api/export/package/${pack.id}/docx`}>
+                    <a className="inline-flex h-10 items-center rounded-md border border-border bg-card px-4 text-sm hover:bg-secondary" href={`/api/export/package/${pack.id}/docx`}>
                       DOCX
                     </a>
                   </div>

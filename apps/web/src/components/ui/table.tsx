@@ -14,11 +14,11 @@ export function TBody({ className, ...props }: HTMLAttributes<HTMLTableSectionEl
 }
 
 export function TR({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) {
-  return <tr className={cn("border-b transition-colors hover:bg-slate-50", className)} {...props} />;
+  return <tr className={cn("border-b transition-colors hover:bg-secondary", className)} {...props} />;
 }
 
 export function TH({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) {
-  return <th className={cn("h-11 px-4 text-left align-middle font-medium text-slate-500", className)} {...props} />;
+  return <th className={cn("h-11 px-4 text-left align-middle font-medium text-muted-foreground", className)} {...props} />;
 }
 
 export function TD({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) {

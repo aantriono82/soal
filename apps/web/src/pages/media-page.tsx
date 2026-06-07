@@ -28,7 +28,7 @@ export function MediaPage() {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Media Library</h1>
-        <p className="text-sm text-slate-500">Upload gambar, audio, video, atau PDF untuk stimulus soal.</p>
+        <p className="text-sm text-muted-foreground">Upload gambar, audio, video, atau PDF untuk stimulus soal.</p>
       </div>
       <Card>
         <CardHeader>
@@ -58,11 +58,11 @@ export function MediaPage() {
             <div key={item.id} className="flex items-center justify-between rounded-md border border-border p-3 text-sm">
               <div>
                 <div className="font-medium">{item.fileName}</div>
-                <div className="text-slate-500">
+                <div className="text-muted-foreground">
                   {item.mimeType} • {(item.fileSize / 1024).toFixed(1)} KB
                 </div>
               </div>
-              <a className="text-blue-700" href={item.publicUrl} target="_blank">
+              <a className="text-primary" href={item.publicUrl} target="_blank">
                 Buka
               </a>
             </div>

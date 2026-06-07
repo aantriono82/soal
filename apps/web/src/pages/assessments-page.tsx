@@ -45,7 +45,7 @@ export function AssessmentsPage() {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Asesmen & Kisi-Kisi</h1>
-        <p className="text-sm text-slate-500">Kelola proyek asesmen dan kisi-kisi per indikator.</p>
+        <p className="text-sm text-muted-foreground">Kelola proyek asesmen dan kisi-kisi per indikator.</p>
       </div>
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         <Card>
@@ -127,10 +127,10 @@ export function AssessmentsPage() {
             </CardHeader>
             <CardContent className="grid gap-3">
               {(blueprints ?? []).map((item) => (
-                <div key={item.id} className="rounded-md border border-border p-4">
+                  <div key={item.id} className="rounded-md border border-border p-4">
                   <div className="font-medium">{item.material}</div>
-                  <div className="text-sm text-slate-500">{item.indicator}</div>
-                  <div className="mt-2 text-xs text-slate-400">
+                  <div className="text-sm text-muted-foreground">{item.indicator}</div>
+                  <div className="mt-2 text-xs text-muted-foreground">
                     {item.questionType} | {item.cognitiveLevel} | {item.difficulty} | {item.questionCount} soal
                   </div>
                 </div>

@@ -26,7 +26,7 @@ export function AuthPage() {
   });
 
   return (
-    <div className="grid min-h-screen place-items-center bg-slate-100 p-6">
+    <div className="grid min-h-screen place-items-center bg-background p-6">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>{mode === "login" ? "Login" : "Register"}</CardTitle>
@@ -63,7 +63,7 @@ export function AuthPage() {
               {mutation.isPending ? "Memproses..." : mode === "login" ? "Masuk" : "Daftar"}
             </Button>
           </form>
-          <button className="mt-4 text-sm text-blue-700" onClick={() => setMode(mode === "login" ? "register" : "login")}>
+          <button className="mt-4 text-sm text-primary" onClick={() => setMode(mode === "login" ? "register" : "login")}>
             {mode === "login" ? "Buat akun baru" : "Sudah punya akun"}
           </button>
         </CardContent>

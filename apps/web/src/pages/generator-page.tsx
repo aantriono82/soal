@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FormField } from "@/components/form-field";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
 export function GeneratorPage() {
@@ -34,7 +35,7 @@ export function GeneratorPage() {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Generator Soal AI</h1>
-        <p className="text-sm text-slate-500">Generate soal dari indikator, materi, atau sumber teks.</p>
+        <p className="text-sm text-muted-foreground">Generate soal dari indikator, materi, atau sumber teks.</p>
       </div>
       <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
         <Card>
@@ -52,14 +53,14 @@ export function GeneratorPage() {
               }}
             >
               <FormField label="Asesmen">
-                <select name="assessmentId" className="h-10 rounded-md border border-border bg-white px-3 text-sm">
+                <Select name="assessmentId">
                   <option value="">Tanpa asesmen</option>
                   {(assessments ?? []).map((item) => (
                     <option key={item.id} value={item.id}>
                       {item.title}
                     </option>
                   ))}
-                </select>
+                </Select>
               </FormField>
               <div className="grid gap-3 md:grid-cols-2">
                 <FormField label="Mapel">
@@ -108,19 +109,19 @@ export function GeneratorPage() {
           </CardHeader>
           <CardContent className="grid gap-4">
             {generated.length === 0 ? (
-              <div className="rounded-md border border-dashed border-border p-8 text-sm text-slate-500">Belum ada hasil generate.</div>
+              <div className="rounded-md border border-dashed border-border p-8 text-sm text-muted-foreground">Belum ada hasil generate.</div>
             ) : (
               generated.map((item, index) => (
                 <div key={index} className="rounded-md border border-border p-4">
                   <div className="font-medium">{item.questionText}</div>
-                  <ul className="mt-3 grid gap-2 text-sm text-slate-600">
+                  <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">
                     {(item.options ?? []).map((option: any) => (
                       <li key={option.optionLabel}>
                         {option.optionLabel}. {option.optionText}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-3 text-xs text-slate-500">Kunci: {item.answerKey}</div>
+                  <div className="mt-3 text-xs text-muted-foreground">Kunci: {item.answerKey}</div>
                 </div>
               ))
             )}

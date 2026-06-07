@@ -24,7 +24,7 @@ export function SettingsPage({ role }: { role: string }) {
     <div className="grid gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Pengaturan</h1>
-        <p className="text-sm text-slate-500">Profil akun, pengguna, AI provider, dan storage.</p>
+        <p className="text-sm text-muted-foreground">Profil akun, pengguna, AI provider, dan storage.</p>
       </div>
       <Card>
         <CardHeader>

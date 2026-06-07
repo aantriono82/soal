@@ -2,37 +2,44 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: ["./apps/web/index.html", "./apps/web/src/**/*.{ts,tsx}"],
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {
-        border: "hsl(214 32% 91%)",
-        input: "hsl(214 32% 91%)",
-        ring: "hsl(221 83% 53%)",
-        background: "hsl(210 20% 98%)",
-        foreground: "hsl(222 47% 11%)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(221 83% 53%)",
-          foreground: "hsl(210 40% 98%)"
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
         },
         secondary: {
-          DEFAULT: "hsl(210 40% 96%)",
-          foreground: "hsl(222 47% 11%)"
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))"
         },
         muted: {
-          DEFAULT: "hsl(210 40% 96%)",
-          foreground: "hsl(215 16% 47%)"
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))"
         },
         accent: {
-          DEFAULT: "hsl(199 89% 48%)",
-          foreground: "hsl(210 40% 98%)"
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))"
         },
         destructive: {
-          DEFAULT: "hsl(0 84% 60%)",
-          foreground: "hsl(210 40% 98%)"
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))"
         },
         card: {
-          DEFAULT: "hsl(0 0% 100%)",
-          foreground: "hsl(222 47% 11%)"
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))"
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))"
         }
       },
       borderRadius: {
