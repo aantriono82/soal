@@ -141,8 +141,37 @@ bun run dev
 bun run build
 bun run build:web
 bun run build:api
+bun run build:seed
 bun run db:seed
 ```
+
+## Docker
+
+Image container yang disiapkan:
+
+- `ghcr.io/aantriono82/soal-api`
+- `ghcr.io/aantriono82/soal-web`
+
+Workflow GitHub Actions akan:
+
+- menjalankan `bun test`
+- menjalankan `bun run lint`
+- menjalankan `bun run build`
+- build image Docker `api` dan `web`
+- push image ke GHCR saat ada push ke branch `main`
+
+Untuk menjalankan secara lokal dengan Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Port default:
+
+- Web: `http://localhost:3000`
+- API: `http://localhost:3001`
+
+Container API menjalankan seed demo otomatis saat start pertama kali bila `AUTO_SEED=true`.
 
 ## Endpoint API Utama
 

@@ -15,6 +15,7 @@
     "build": "bun run build:web && bun run build:api",
     "build:web": "bunx vite build --config apps/web/vite.config.ts",
     "build:api": "bun build apps/api/src/index.ts --outdir dist/api --target bun",
+    "build:seed": "bun build apps/api/src/db/seed.ts --outdir dist/api --target bun",
     "db:seed": "bun run apps/api/src/db/seed.ts"
   },
   "dependencies": {

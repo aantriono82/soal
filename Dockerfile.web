@@ -1,0 +1,20 @@
+FROM oven/bun:1 AS builder
+
+WORKDIR /app
+
+COPY package.json bun.lock tsconfig.json ./
+COPY apps ./apps
+COPY packages ./packages
+COPY postcss.config.cjs tailwind.config.ts ./
+
+RUN bun install --frozen-lockfile
+RUN bun run build:web
+
+FROM nginx:1.29-alpine AS runner
+
+ENV API_UPSTREAM=api:3001
+
+COPY docker/nginx/default.conf.template /etc/nginx/templates/default.conf.template
+COPY --from=builder /app/apps/web/dist /usr/share/nginx/html
+
+EXPOSE 80

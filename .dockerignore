@@ -1,0 +1,10 @@
+.git
+.github
+.env
+node_modules
+dist
+data
+uploads
+rustfs-data
+apps/web/dist
+*.log

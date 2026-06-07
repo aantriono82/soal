@@ -1,4 +1,43 @@
 services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: assessment-api
+    environment:
+      APP_URL: http://localhost:3000
+      API_PORT: 3001
+      DATABASE_URL: ./data/app.sqlite
+      JWT_SECRET: change-this-secret
+      RUSTFS_ENDPOINT: http://rustfs:9000
+      RUSTFS_ACCESS_KEY: admin
+      RUSTFS_SECRET_KEY: admin123456
+      RUSTFS_BUCKET_MEDIA: media-soal
+      AI_BASE_URL: https://api.openai.com/v1
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: gpt-4.1-mini
+      UPLOAD_DIR: ./uploads
+      AUTO_SEED: "true"
+    volumes:
+      - app-data:/app/data
+      - app-uploads:/app/uploads
+    ports:
+      - "3001:3001"
+    depends_on:
+      - rustfs
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: assessment-web
+    environment:
+      API_UPSTREAM: api:3001
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
   rustfs:
     image: rustfs/rustfs:latest
     container_name: assessment-rustfs
@@ -9,4 +48,9 @@ services:
       RUSTFS_ACCESS_KEY: admin
       RUSTFS_SECRET_KEY: admin123456
     volumes:
-      - ./rustfs-data:/data
+      - rustfs-data:/data
+
+volumes:
+  app-data:
+  app-uploads:
+  rustfs-data:
