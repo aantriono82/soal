@@ -1,0 +1,12 @@
+services:
+  rustfs:
+    image: rustfs/rustfs:latest
+    container_name: assessment-rustfs
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      RUSTFS_ACCESS_KEY: admin
+      RUSTFS_SECRET_KEY: admin123456
+    volumes:
+      - ./rustfs-data:/data
