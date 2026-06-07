@@ -1,6 +1,6 @@
 # Assessment AI App
 
-Aplikasi full-stack bank soal dan generator asesmen berbasis AI untuk admin, operator sekolah, dan guru.
+Aplikasi full-stack bank soal dan generator asesmen berbasis AI untuk admin dan guru.
 
 Implementasi ini mengikuti blueprint pada `summary.md` dengan stack:
 
@@ -71,7 +71,6 @@ Implementasi ini mengikuti blueprint pada `summary.md` dengan stack:
 ## Role Pengguna
 
 - `admin`: mengelola seluruh data dan pengguna
-- `operator`: membantu input data, pengelolaan media, dan proses export
 - `guru`: membuat asesmen, menghasilkan soal, dan mengelola bank soal
 
 ## Struktur Proyek

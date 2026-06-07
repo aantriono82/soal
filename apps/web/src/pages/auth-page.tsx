@@ -48,7 +48,6 @@ export function AuthPage() {
                 <FormField label="Role">
                   <Select name="role" defaultValue="guru">
                     <option value="guru">Guru</option>
-                    <option value="operator">Operator</option>
                     <option value="admin">Admin</option>
                   </Select>
                 </FormField>

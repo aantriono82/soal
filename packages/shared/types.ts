@@ -1,4 +1,4 @@
-export type UserRole = "admin" | "guru" | "operator";
+export type UserRole = "admin" | "guru";
 export type QuestionStatus = "draft" | "valid" | "review";
 export type QuestionType =
   | "pilihan_ganda"

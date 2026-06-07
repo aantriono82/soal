@@ -11,7 +11,7 @@
     "dev:api": "bun --hot apps/api/src/index.ts",
     "dev:web": "bunx vite --config apps/web/vite.config.ts --host 0.0.0.0 --port 3000",
     "test": "bun test",
-    "lint": "eslint apps/api/src/app.ts apps/api/src/index.ts apps/web/vite.config.ts scripts/dev.ts scripts/dev-runner.ts \"**/*.test.ts\"",
+    "lint": "eslint apps/web/src/pages/auth-page.tsx packages/shared/schemas.ts packages/shared/types.ts scripts/dev.ts scripts/dev-runner.ts apps/api/src/app.ts apps/api/src/index.ts apps/web/vite.config.ts packages/shared/schemas.test.ts apps/api/src/app.test.ts apps/web/vite.config.test.ts scripts/dev-runner.test.ts",
     "build": "bun run build:web && bun run build:api",
     "build:web": "bunx vite build --config apps/web/vite.config.ts",
     "build:api": "bun build apps/api/src/index.ts --outdir dist/api --target bun",

@@ -205,7 +205,6 @@ Pengguna masuk ke aplikasi menggunakan email dan password.
 Role pengguna:
 
 - Admin
-- Operator Sekolah
 - Guru
 
 ---
@@ -362,7 +361,6 @@ Role:
 ```txt
 Admin  : mengelola semua data
 Guru   : membuat soal dan asesmen
-Operator : membantu input dan export
 ```
 
 ---
